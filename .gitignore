@@ -1,0 +1,7 @@
+/auto-save-list
+/eshell
+/ac-comphist.dat
+
+.*
+!.gitignore
+*~
