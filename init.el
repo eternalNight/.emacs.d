@@ -16,7 +16,8 @@
 (let ((pack-names '("system-pack"
 		    "display-pack"
 		    "navigation-pack"
-		    "dev-pack")))
+		    "dev-pack"
+		    "lang-pack")))
   (setq config/packs (mapcar (lambda (p) (concat config/packs-dir p)) pack-names)))
 
 ;; Load packs
