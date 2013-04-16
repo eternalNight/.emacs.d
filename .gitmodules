@@ -7,3 +7,6 @@
 [submodule "lib/packs/dev-pack/lib/popup-el"]
 	path = lib/packs/dev-pack/lib/popup-el
 	url = https://github.com/auto-complete/popup-el.git
+[submodule "lib/packs/dev-pack/lib/magit"]
+	path = lib/packs/dev-pack/lib/magit
+	url = https://github.com/magit/magit.git
