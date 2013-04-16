@@ -3,4 +3,5 @@
 (config/load-config-file "colour-theme-conf.el")
 (config/load-config-file "live-fontify-hex-conf.el")
 
+(config/load-config-file "calendar-conf.el")
 (config/load-config-file "time-conf.el")
