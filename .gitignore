@@ -1,3 +1,4 @@
+/etc/custom-configuration.el
 /tmp
 .*
 !.gitignore
