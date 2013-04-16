@@ -1,0 +1,9 @@
+[submodule "lib/packs/dev-pack/lib/auto-complete"]
+	path = lib/packs/dev-pack/lib/auto-complete
+	url = https://github.com/auto-complete/auto-complete.git
+[submodule "lib/packs/dev-pack/lib/fuzzy-el"]
+	path = lib/packs/dev-pack/lib/fuzzy-el
+	url = https://github.com/auto-complete/fuzzy-el.git
+[submodule "lib/packs/dev-pack/lib/popup-el"]
+	path = lib/packs/dev-pack/lib/popup-el
+	url = https://github.com/auto-complete/popup-el.git
