@@ -7,6 +7,8 @@
 ;; auto-complete mode
 
 (config/add-pack-lib "auto-complete")
+(config/add-pack-lib "auto-complete-clang")
+
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
@@ -32,9 +34,10 @@
                ac-source-semantic
                ac-source-yasnippet))
 
-(dolist (mode '(org-mode text-mode sh-mode lisp-mode))
+(dolist (mode '(org-mode text-mode sh-mode lisp-mode c-mode))
   (add-to-list 'ac-modes mode))
 
 ;; Key triggers
 (define-key ac-completing-map (kbd "TAB") 'ac-complete)
 (define-key ac-completing-map (kbd "M-RET") 'ac-help)
+

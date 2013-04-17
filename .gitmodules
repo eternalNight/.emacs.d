@@ -10,3 +10,9 @@
 [submodule "lib/packs/dev-pack/lib/magit"]
 	path = lib/packs/dev-pack/lib/magit
 	url = https://github.com/magit/magit.git
+[submodule "lib/packs/dev-pack/lib/yasnippet"]
+	path = lib/packs/dev-pack/lib/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "lib/packs/dev-pack/lib/auto-complete-clang"]
+	path = lib/packs/dev-pack/lib/auto-complete-clang
+	url = https://github.com/brianjcj/auto-complete-clang.git
