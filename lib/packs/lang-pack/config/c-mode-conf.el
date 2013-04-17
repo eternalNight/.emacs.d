@@ -8,3 +8,5 @@
   (setq ac-sources (append '(ac-source-clang) ac-sources)))
 (add-hook 'c-mode-hook 'ac-cc-mode-setup)
 (add-hook 'c++-mode-hook 'ac-cc-mode-setup)
+
+(add-to-list 'ac-modes 'c-mode)

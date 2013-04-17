@@ -34,7 +34,7 @@
                ac-source-semantic
                ac-source-yasnippet))
 
-(dolist (mode '(org-mode text-mode sh-mode lisp-mode c-mode))
+(dolist (mode '(org-mode text-mode sh-mode lisp-mode))
   (add-to-list 'ac-modes mode))
 
 ;; Key triggers
