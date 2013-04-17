@@ -17,6 +17,7 @@
 		    "display-pack"
 		    "navigation-pack"
 		    "dev-pack"
+		    "doc-pack"
 		    "lang-pack")))
   (setq config/packs (mapcar (lambda (p) (concat config/packs-dir p)) pack-names)))
 
