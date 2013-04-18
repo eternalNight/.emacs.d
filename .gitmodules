@@ -16,3 +16,9 @@
 [submodule "lib/packs/dev-pack/lib/auto-complete-clang"]
 	path = lib/packs/dev-pack/lib/auto-complete-clang
 	url = https://github.com/brianjcj/auto-complete-clang.git
+[submodule "lib/packs/lang-pack/lib/clojure-mode"]
+	path = lib/packs/lang-pack/lib/clojure-mode
+	url = https://github.com/technomancy/clojure-mode.git
+[submodule "lib/packs/lang-pack/lib/nrepl"]
+	path = lib/packs/lang-pack/lib/nrepl
+	url = https://github.com/kingtim/nrepl.el.git
