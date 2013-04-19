@@ -9,3 +9,5 @@
 	  '(lambda ()
 	     (define-key clojure-mode-map
 	       (kbd "C-j") 'nrepl-eval-last-expression)))
+
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)

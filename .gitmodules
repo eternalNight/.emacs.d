@@ -22,3 +22,6 @@
 [submodule "lib/packs/lang-pack/lib/nrepl"]
 	path = lib/packs/lang-pack/lib/nrepl
 	url = https://github.com/kingtim/nrepl.el.git
+[submodule "lib/packs/dev-pack/lib/rainbow-delimiters"]
+	path = lib/packs/dev-pack/lib/rainbow-delimiters
+	url = https://github.com/jlr/rainbow-delimiters.git
