@@ -25,3 +25,6 @@
 [submodule "lib/packs/dev-pack/lib/rainbow-delimiters"]
 	path = lib/packs/dev-pack/lib/rainbow-delimiters
 	url = https://github.com/jlr/rainbow-delimiters.git
+[submodule "lib/packs/dev-pack/lib/eproject"]
+	path = lib/packs/dev-pack/lib/eproject
+	url = https://github.com/jrockway/eproject.git

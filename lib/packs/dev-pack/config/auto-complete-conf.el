@@ -31,7 +31,6 @@
              '(ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
-               ac-source-semantic
                ac-source-yasnippet))
 
 (dolist (mode '(org-mode text-mode sh-mode lisp-mode))
@@ -40,4 +39,3 @@
 ;; Key triggers
 (define-key ac-completing-map (kbd "TAB") 'ac-complete)
 (define-key ac-completing-map (kbd "M-RET") 'ac-help)
-
