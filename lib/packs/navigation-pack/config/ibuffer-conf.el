@@ -28,5 +28,12 @@
 	 ("elisp" (mode . emacs-lisp-mode))
 	 ("org notes" (mode . org-mode))
 	 ("rst notes" (mode . rst-mode))
-	 ("shell" (mode . eshell-mode)))))
-
+	 ("shell" (mode . eshell-mode))
+	 ("C/C++ Headers" (or
+			   (filename . ".h$")
+			   (filename . ".hh$")
+			   (filename . ".hpp$")))
+	 ("C/C++ Sources" (or
+			   (filename . ".c$")
+			   (filename . ".cc$")
+			   (filename . ".cpp$"))))))
