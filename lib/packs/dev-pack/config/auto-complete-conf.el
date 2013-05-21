@@ -33,7 +33,7 @@
                ac-source-words-in-same-mode-buffers
                ac-source-yasnippet))
 
-(dolist (mode '(org-mode text-mode sh-mode lisp-mode))
+(dolist (mode '(text-mode sh-mode lisp-mode))
   (add-to-list 'ac-modes mode))
 
 ;; Key triggers
