@@ -4,6 +4,7 @@
  '(delete-old-versions t)                                ;; Delete excess backup files silently
  '(system-time-locale "C")                               ;; Always use English abbrev. for timestamps
  '(default-buffer-file-coding-system 'utf-8)             ;; Use UTF-8 encoding by default
+ '(fill-column 80)                                       ;; Column width
  )
 
 ;; Set default directory
