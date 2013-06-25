@@ -14,7 +14,9 @@
 		      (append
 		       (mapcar (lambda (item) (concat "-I" item)) system-include-dirs)
 		       (mapcar (lambda (item) (concat "-I" (eproject-root) item)) project-include-dirs))))
-	      (setq ac-sources (append '(ac-source-clang) ac-sources)))))
+	      (setq ac-sources (append '(ac-source-clang) ac-sources)))
+	    (when (eproject-attribute :basic-offset)
+	      (setq c-basic-offset (eproject-attribute :basic-offset)))))
 
 (defun c-mode-setup ()
   (c-set-style "k&r")
