@@ -28,3 +28,6 @@
 [submodule "lib/packs/dev-pack/lib/eproject"]
 	path = lib/packs/dev-pack/lib/eproject
 	url = https://github.com/jrockway/eproject.git
+[submodule "lib/packs/lang-pack/lib/tuareg"]
+	path = lib/packs/lang-pack/lib/tuareg
+	url = https://github.com/emacsmirror/tuareg.git
