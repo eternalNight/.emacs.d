@@ -38,7 +38,7 @@
         )
     (list
      ;; keywords
-     (cons (concat "\\b\\(" kw1 "\\)\\b[ \n\t(]") 1)
+     (cons (concat "\\b\\(" kw1 "\\)\\b") 1)
      ;; block introducing keywords with immediately following colons.
      (cons (concat "\\b\\(" kw2 "\\)[ \n\t(]") 1)
      ;; classes
@@ -199,8 +199,7 @@ rigidly along with this one."
                       (backward-sexp 1)
                       (if (looking-at "[\\(]")
                           (setq indentcol (+ 1 (current-column)))
-                        ;; if enclosing sexp starts with {, indent three from t
-he line
+                        ;; if enclosing sexp starts with {, indent three from the line
                         ;; with the {
                         (progn
                           (beginning-of-line)
