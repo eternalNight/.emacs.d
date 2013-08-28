@@ -3,7 +3,7 @@
 (autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
 (autoload 'nrepl-jack-in "nrepl" "Start a nREPL server" t)
 
-(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs?$" . clojure-mode))
 
 (add-hook 'clojure-mode-hook
 	  '(lambda ()
