@@ -31,3 +31,6 @@
 [submodule "lib/packs/lang-pack/lib/tuareg"]
 	path = lib/packs/lang-pack/lib/tuareg
 	url = https://github.com/emacsmirror/tuareg.git
+[submodule "lib/packs/reasoning-pack/lib/proofgeneral"]
+	path = lib/packs/reasoning-pack/lib/proofgeneral
+	url = https://github.com/emacsmirror/proofgeneral.git
