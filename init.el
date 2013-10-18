@@ -18,7 +18,8 @@
 		    "navigation-pack"
 		    "dev-pack"
 		    "doc-pack"
-		    "lang-pack")))
+		    "lang-pack"
+		    "reasoning-pack")))
   (setq config/packs (mapcar (lambda (p) (concat config/packs-dir p)) pack-names)))
 
 ;; Load packs
