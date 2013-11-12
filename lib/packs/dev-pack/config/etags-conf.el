@@ -2,4 +2,6 @@
   "Create tags file."
   (interactive "DDirectory: ")
   (eshell-command
-   (format "find %s -type f -name \"*.[ch]\" | etags -" dir-name)))
+   (format "ctags -e -R %s" (directory-file-name dir-name))))
+
+(global-set-key (kbd "C-.") 'pop-tag-mark)
