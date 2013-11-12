@@ -1,5 +1,5 @@
 (defun etags-build (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
-  (eshell-command 
+  (eshell-command
    (format "find %s -type f -name \"*.[ch]\" | etags -" dir-name)))
