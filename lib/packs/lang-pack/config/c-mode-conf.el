@@ -16,13 +16,17 @@
 		       (mapcar (lambda (item) (concat "-I" (eproject-root) item)) project-include-dirs))))
 	      (setq ac-sources (append '(ac-source-clang) ac-sources)))
 	    (when (eproject-attribute :basic-offset)
-	      (setq c-basic-offset (eproject-attribute :basic-offset)))))
+	      (let ((offset (eproject-attribute :basic-offset)))
+		(setq c-basic-offset offset
+		      tab-width offset)))))
 
 (defun c-mode-setup ()
   (c-set-style "k&r")
   (c-toggle-auto-state)
   (c-toggle-hungry-state)                               ;; Delete continuous spaces by backspace
-  (setq c-basic-offset 8)                               ;; A tab is 8-character wide
+  (setq indent-tabs-mode t)                             ;; Use tabs instead of spaces for indention
+  (setq tab-width 8)
+  (setq c-basic-offset tab-width)                       ;; A tab is 8-character wide by default
   (which-function-mode)
   (eproject-maybe-turn-on))
 
