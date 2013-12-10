@@ -18,7 +18,9 @@
 	    (when (eproject-attribute :basic-offset)
 	      (let ((offset (eproject-attribute :basic-offset)))
 		(setq c-basic-offset offset
-		      tab-width offset)))))
+		      tab-width offset)))
+	    (when (eproject-attribute :indent-spaces)
+	      (setq indent-tabs-mode nil))))
 
 (defun c-mode-setup ()
   (c-set-style "k&r")
