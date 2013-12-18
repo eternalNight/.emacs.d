@@ -10,3 +10,6 @@
 ;; Set default directory
 (setq default-directory "~/")
 (setq auto-save-list-file-name (concat config/autosaves-dir "autosave-list"))
+
+;; Remove trailing whitespaces on saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
