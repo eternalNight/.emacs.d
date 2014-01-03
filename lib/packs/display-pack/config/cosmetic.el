@@ -17,6 +17,8 @@
  '(default-buffer-file-coding-system 'utf-8)       ;; use UTF-8 encoding by default
  )
 
-(custom-set-faces
- '(default ((t (:height 143 :family "DejaVu Sans Mono")))))
-
+(set-default-font "DejaVu Sans Mono 14")
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font)
+		    charset
+		    (font-spec :family "WenQuanYi Zen Hei Mono" :size 22)))
