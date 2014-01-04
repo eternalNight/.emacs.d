@@ -18,7 +18,8 @@
  )
 
 (set-default-font "DejaVu Sans Mono 14")
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-		    charset
-		    (font-spec :family "WenQuanYi Zen Hei Mono" :size 22)))
+(if (display-graphic-p)
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font)
+			charset
+			(font-spec :family "WenQuanYi Zen Hei Mono" :size 22))))
