@@ -13,3 +13,6 @@
 
 ;; Remove trailing whitespaces on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Move the mouse when the cursor gets close to it
+(mouse-avoidance-mode 'cat-and-mouse)
