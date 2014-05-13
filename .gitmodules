@@ -34,3 +34,9 @@
 [submodule "lib/packs/reasoning-pack/lib/proofgeneral"]
 	path = lib/packs/reasoning-pack/lib/proofgeneral
 	url = https://github.com/emacsmirror/proofgeneral.git
+[submodule "lib/packs/game-pack/lib/2048"]
+	path = lib/packs/game-pack/lib/2048
+	url = https://github.com/sprang/emacs-2048
+[submodule "lib/packs/lang-pack/lib/markdown-mode"]
+	path = lib/packs/lang-pack/lib/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
