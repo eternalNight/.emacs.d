@@ -7,4 +7,5 @@
 (config/load-config-file "markdown-conf.el")
 (config/load-config-file "python-conf.el")
 (config/load-config-file "quack-conf.el")
+(config/load-config-file "systemtap-conf.el")
 (config/load-config-file "tuareg-conf.el")
