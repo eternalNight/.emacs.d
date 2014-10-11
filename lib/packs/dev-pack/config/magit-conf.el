@@ -1,5 +1,6 @@
 (config/add-pack-lib "magit")
 (autoload 'magit-status "magit" "Open magit status buffer" t)
+(autoload 'magit-log "magit" "Open magit log buffer" t)
 
 (custom-set-variables
  '(magit-commit-signoff t))
