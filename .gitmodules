@@ -40,3 +40,6 @@
 [submodule "lib/packs/lang-pack/lib/markdown-mode"]
 	path = lib/packs/lang-pack/lib/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "lib/packs/lang-pack/lib/lua-mode"]
+	path = lib/packs/lang-pack/lib/lua-mode
+	url = https://github.com/immerrr/lua-mode.git
