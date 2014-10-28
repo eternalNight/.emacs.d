@@ -1,3 +1,5 @@
+(require 'gnus-desktop-notify)
+
 (setq gnus-select-method
       '(nnimap "gmail"
 	       (nnimap-inbox "INBOX")
@@ -13,15 +15,17 @@
       smtpmail-default-smtp-server "smtp.gmail.com"
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 587
-      tls-program '("D:/Git/bin/openssl.exe s_client -connect %h:%p -no_ssl2 -ign_eof"))
-
-(setq gnus-cache-directory (concat config/tmp-dir "Gnus/Mails/cache"))
-(setq gnus-read-active-file 'some)
+      tls-program '("D:/Git/bin/openssl.exe s_client -connect %h:%p -no_ssl2 -ign_eof")
+      gnus-cache-directory (concat config/tmp-dir "Gnus/Mails/cache")
+      gnus-read-active-file 'some
+      gnus-use-cache t
+      gnus-inhibit-startup-message t
+      gnus-novice-user nil
+      gnus-expert-user t
+      nnmail-expiry-wait 7
+      gnus-fetch-old-headers 'passive)
 
 (gnus-agentize)
-(setq gnus-use-cache t)
-(setq gnus-inhibit-startup-message t)
-(setq gnus-novice-user nil)
-(setq gnus-expert-user t)
-(setq nnmail-expiry-wait 7)
-(setq gnus-fetch-old-headers 'passive)
+(gnus-desktop-notify-mode)
+(gnus-demon-add-handler 'gnus-group-get-new-news 5 t)
+(gnus-demon-init)
