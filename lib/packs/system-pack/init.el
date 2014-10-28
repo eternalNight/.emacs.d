@@ -18,3 +18,4 @@
 (mouse-avoidance-mode 'cat-and-mouse)
 
 (config/load-config-file "alert-conf.el")
+(config/load-config-file "bbdb-conf.el")
