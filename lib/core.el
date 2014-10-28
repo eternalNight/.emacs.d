@@ -28,3 +28,8 @@
     (if (file-exists-p pack-init)
         (load-file pack-init))
     (setq live-current-pack-dir nil)))
+
+(defun config/compile-all ()
+  "Recompile all el files"
+  (interactive)
+  (byte-recompile-directory (expand-file-name config/lib-dir) 0))
