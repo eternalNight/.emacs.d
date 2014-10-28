@@ -642,6 +642,29 @@ strings."
 (alert-define-style 'libnotify :title "Notify using libnotify"
                     :notifier #'alert-libnotify-notify)
 
+(defcustom alert-notifu-command (executable-find "notifu")
+  "Path to the notifu command.
+This can found at http://www.paralint.com/projects/notifu/index.html."
+  :type 'file
+  :group 'alert)
+
+(defun alert-notifu-notify (info)
+  "Send INFO using notify-send.
+Handles :ICON, :CATEGORY, :SEVERITY, :PERSISTENT, :NEVER-PERSIST, :TITLE
+and :MESSAGE keywords from the INFO plist.  :CATEGORY can be
+passed as a single symbol, a string or a list of symbols or
+strings."
+  (if alert-notifu-command
+      (let ((args
+	     (list "/p" (plist-get info :title)
+		   "/m" (plist-get info :message))))
+	(apply #'call-process alert-notifu-command nil nil nil args))
+    (alert-message-notify info)))
+
+(alert-define-style 'notifu :title "Notify using notifu on Windows"
+                    :notifier #'alert-notifu-notify)
+
+
 
 (defcustom alert-gntp-icon
   "http://cvs.savannah.gnu.org/viewvc/*checkout*/emacs/emacs/etc/images/icons/hicolor/48x48/apps/emacs.png"
