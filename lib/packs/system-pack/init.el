@@ -16,3 +16,5 @@
 
 ;; Move the mouse when the cursor gets close to it
 (mouse-avoidance-mode 'cat-and-mouse)
+
+(config/load-config-file "alert-conf.el")
