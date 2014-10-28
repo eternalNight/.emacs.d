@@ -39,4 +39,15 @@
 	 ("C/C++ Sources" (or
 			   (filename . "\.c$")
 			   (filename . "\.cc$")
-			   (filename . "\.cpp$"))))))
+			   (filename . "\.cpp$")))
+	 ("Gnus" (or
+		  (mode . message-mode)
+		  (mode . bbdb-mode)
+		  (mode . mail-mode)
+		  (mode . gnus-group-mode)
+		  (mode . gnus-summary-mode)
+		  (mode . gnus-article-mode)
+		  (mode . gnus-server-mode)
+		  (mode . gnus-browse-mode)
+		  (filename . "^\.bbdb$")
+		  (filename . "\.newsrc-dribble"))))))
