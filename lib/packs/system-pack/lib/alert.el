@@ -658,7 +658,7 @@ strings."
       (let ((args
 	     (list "/p" (plist-get info :title)
 		   "/m" (plist-get info :message))))
-	(apply #'call-process alert-notifu-command nil nil nil args))
+	(apply #'call-process alert-notifu-command nil 0 nil args))
     (alert-message-notify info)))
 
 (alert-define-style 'notifu :title "Notify using notifu on Windows"
