@@ -656,8 +656,8 @@ passed as a single symbol, a string or a list of symbols or
 strings."
   (if alert-notifu-command
       (let ((args
-	     (list "/p" (plist-get info :title)
-		   "/m" (plist-get info :message))))
+	     (list "/p" (or (plist-get info :title) "Emacs")
+		   "/m" (or (plist-get info :message) "Something happens"))))
 	(apply #'call-process alert-notifu-command nil 0 nil args))
     (alert-message-notify info)))
 
