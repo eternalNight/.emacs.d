@@ -11,6 +11,10 @@
 (setq default-directory "~/")
 (setq auto-save-list-file-name (concat config/autosaves-dir "autosave-list"))
 
+;; Set personal information
+(setq user-full-name "Junjie Mao")
+(setq user-mail-address "eternal.n08@gmail.com")
+
 ;; Remove trailing whitespaces on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
