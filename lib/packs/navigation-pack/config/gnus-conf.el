@@ -8,6 +8,8 @@
 	       (nnimap-stream ssl)
 	       (nnimap-fetch-partial-articles "text/")))
 
+(add-to-list 'gnus-secondary-select-methods '(nntp "news.gmane.org"))
+
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
       smtpmail-auth-credentials '(("smtp.gmail.com" 587
@@ -17,6 +19,7 @@
       smtpmail-smtp-service 587
       tls-program '("D:/Git/bin/openssl.exe s_client -connect %h:%p -no_ssl2 -ign_eof")
       gnus-cache-directory (concat config/tmp-dir "Gnus/Mails/cache")
+      mm-default-directory (concat config/tmp-dir "Gnus/MIME")
       gnus-read-active-file 'some
       gnus-use-cache t
       gnus-inhibit-startup-message t
@@ -27,5 +30,5 @@
 
 (gnus-agentize)
 (gnus-desktop-notify-mode)
-(gnus-demon-add-handler 'gnus-group-get-new-news 5 t)
+(gnus-demon-add-handler 'gnus-demon-scan-news 5 t)
 (gnus-demon-init)
