@@ -655,9 +655,10 @@ and :MESSAGE keywords from the INFO plist.  :CATEGORY can be
 passed as a single symbol, a string or a list of symbols or
 strings."
   (if alert-notifu-command
-      (let ((args
-	     (list "/p" (or (plist-get info :title) "Emacs")
-		   "/m" (or (plist-get info :message) "Something happens"))))
+      (let* ((message (replace-regexp-in-string "\n" "\\n" (plist-get info :message) t t))
+	     (args
+	      (list "/p" (or (plist-get info :title) "Emacs")
+		    "/m" (or message  "Something happens"))))
 	(apply #'call-process alert-notifu-command nil 0 nil args))
     (alert-message-notify info)))
 
