@@ -31,4 +31,3 @@
 (gnus-agentize)
 (gnus-desktop-notify-mode)
 (gnus-demon-add-handler 'gnus-demon-scan-news 5 t)
-(gnus-demon-init)
