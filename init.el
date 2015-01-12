@@ -20,7 +20,8 @@
 		    "doc-pack"
 		    "game-pack"
 		    "lang-pack"
-		    "reasoning-pack")))
+		    "reasoning-pack"
+		    "data-pack")))
   (setq config/packs (mapcar (lambda (p) (concat config/packs-dir p)) pack-names)))
 
 ;; Load packs
