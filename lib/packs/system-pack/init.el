@@ -21,5 +21,9 @@
 ;; Move the mouse when the cursor gets close to it
 (mouse-avoidance-mode 'cat-and-mouse)
 
+;; Enable disabled functions
+(put 'scroll-left 'disabled nil)
+(put 'scroll-right 'disabled nil)
+
 (config/load-config-file "alert-conf.el")
 (config/load-config-file "bbdb-conf.el")
