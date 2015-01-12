@@ -25,5 +25,8 @@
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
 
+;; Truncate long lines by default
+(set-default 'truncate-lines t)
+
 (config/load-config-file "alert-conf.el")
 (config/load-config-file "bbdb-conf.el")
