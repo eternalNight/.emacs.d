@@ -32,14 +32,15 @@
 	 ("shell scripts" (filename . "\.sh$"))
 	 ("python scripts" (filename . "\.py$"))
 	 ("images" (filename . "\.png$"))
-	 ("C/C++ Headers" (or
+	 ("C/C++ headers" (or
 			   (filename . "\.h$")
 			   (filename . "\.hh$")
 			   (filename . "\.hpp$")))
-	 ("C/C++ Sources" (or
+	 ("C/C++ sources" (or
 			   (filename . "\.c$")
 			   (filename . "\.cc$")
 			   (filename . "\.cpp$")))
+	 ("Rust sources" (filename . "\.rs$"))
 	 ("Gnus" (or
 		  (mode . message-mode)
 		  (mode . bbdb-mode)
