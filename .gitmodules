@@ -46,3 +46,6 @@
 [submodule "lib/packs/lang-pack/lib/rust-mode"]
 	path = lib/packs/lang-pack/lib/rust-mode
 	url = https://github.com/rust-lang/rust-mode.git
+[submodule "lib/packs/dev-pack/lib/git-modes"]
+	path = lib/packs/dev-pack/lib/git-modes
+	url = https://github.com/magit/git-modes.git

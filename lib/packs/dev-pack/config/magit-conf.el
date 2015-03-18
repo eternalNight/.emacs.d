@@ -1,3 +1,4 @@
+(config/add-pack-lib "git-modes")
 (config/add-pack-lib "magit")
 (autoload 'magit-status "magit" "Open magit status buffer" t)
 (autoload 'magit-log "magit" "Open magit log buffer" t)
