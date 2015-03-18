@@ -41,6 +41,7 @@
 			   (filename . "\.cc$")
 			   (filename . "\.cpp$")))
 	 ("Rust sources" (filename . "\.rs$"))
+	 ("LaTeX sources" (filename . "\.tex$"))
 	 ("Gnus" (or
 		  (mode . message-mode)
 		  (mode . bbdb-mode)
