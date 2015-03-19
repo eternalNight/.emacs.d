@@ -1,13 +1,13 @@
-(config/add-pack-lib "clojure-mode")
 (config/add-pack-lib "nrepl")
-(autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
 (autoload 'nrepl-jack-in "nrepl" "Start a nREPL server" t)
 
-(add-to-list 'auto-mode-alist '("\\.cljs?$" . clojure-mode))
-
-(add-hook 'clojure-mode-hook
-	  '(lambda ()
-	     (define-key clojure-mode-map
-	       (kbd "C-j") 'nrepl-eval-last-expression)))
-
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(use-package clojure-mode
+	     :ensure t
+	     :mode "\\.cljs?$"
+	     :config
+	     (add-hook 'clojure-mode-hook
+		       '(lambda ()
+			  (define-key clojure-mode-map
+			    (kbd "C-j") 'nrepl-eval-last-expression)))
+	     (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+	     )

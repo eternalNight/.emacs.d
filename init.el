@@ -9,6 +9,13 @@
  config/autosaves-dir(file-name-as-directory (concat config/tmp-dir  "autosaves"))
  config/packs-dir    (file-name-as-directory (concat config/lib-dir  "packs")))
 
+;; Initialize package archives
+(require 'package)
+(push '("marmalade" . "http://marmalade-repo.org/packages/") package-archives)
+(push '("melpa" . "http://melpa.milkbox.net/packages/") package-archives)
+
+(package-initialize)
+
 ;; Load lib
 (load-file (concat config/lib-dir "core.el"))
 

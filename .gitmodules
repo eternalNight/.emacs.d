@@ -49,3 +49,6 @@
 [submodule "lib/packs/dev-pack/lib/git-modes"]
 	path = lib/packs/dev-pack/lib/git-modes
 	url = https://github.com/magit/git-modes.git
+[submodule "lib/packs/system-pack/lib/use-package"]
+	path = lib/packs/system-pack/lib/use-package
+	url = https://github.com/jwiegley/use-package.git

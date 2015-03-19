@@ -13,7 +13,7 @@
 
 ;; Set personal information
 (setq user-full-name "Junjie Mao")
-(setq user-mail-address "eternal.n08@gmail.com")
+(setq user-mail-address "junjie.mao@hotmail.com")
 
 ;; Remove trailing whitespaces on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -28,5 +28,6 @@
 ;; Truncate long lines by default
 (set-default 'truncate-lines t)
 
+(config/load-config-file "use-package-conf.el")
 (config/load-config-file "alert-conf.el")
 (config/load-config-file "bbdb-conf.el")
