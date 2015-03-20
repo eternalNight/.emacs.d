@@ -1,8 +1,5 @@
 (config/load-config-file "c-mode-os-conf.el")
 
-(require 'auto-complete-clang)
-(make-variable-buffer-local 'ac-clang-flags)
-
 (add-hook 'c-generic-project-file-visit-hook
 	  (lambda ()
 	    (when (eproject-attribute :enable-ac)

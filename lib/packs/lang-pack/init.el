@@ -1,13 +1,55 @@
-(config/load-config-file "alloy-mode-conf.el")
-(config/load-config-file "asm-conf.el")
+(use-package alloy-mode
+  :mode "\\.als$")
+
+(use-package clojure-mode
+  :ensure t
+  :mode "\\.cljs?$"
+  :config
+  (add-hook 'clojure-mode-hook
+	    '(lambda ()
+	       (define-key clojure-mode-map
+		 (kbd "C-j") 'nrepl-eval-last-expression)))
+  (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
+(config/add-pack-lib "nrepl")
+(autoload 'nrepl-jack-in "nrepl" "Start a nREPL server" t)
+
+(use-package cocci-mode
+  :mode "\\.cocci$")
+
+(use-package gnuplot-mode
+  :ensure t
+  :mode "\\.gp$")
+
+(use-package llvm-mode
+  :ensure t
+  :mode "\\.ll$")
+
+(use-package lua-mode
+  :ensure t
+  :mode "\\.lua$"
+  :interpreter "lua"
+  :config
+  (setq lua-indent-level 4))
+
+(use-package markdown-mode
+  :ensure t
+  :mode "\\.md$")
+
+(use-package rust-mode
+  :ensure t
+  :mode "\\.rs$")
+
+(use-package tuareg
+  :ensure t
+  :mode "\\.ml[ily]$")
+
+(use-package systemtap-mode
+  :ensure t
+  :mode "\\.stp$"
+  :config
+  (setq c-basic-offset 8))
+
+(add-hook 'asm-mode-hook (function cscope:hook))
+(add-hook 'python-mode-hook (function cscope:hook))
+
 (config/load-config-file "c-mode-conf.el")
-(config/load-config-file "clojure-conf.el")
-(config/load-config-file "cocci-conf.el")
-(config/load-config-file "gnuplot-conf.el")
-(config/load-config-file "llvm-conf.el")
-(config/load-config-file "lua-conf.el")
-(config/load-config-file "markdown-conf.el")
-(config/load-config-file "python-conf.el")
-(config/load-config-file "rust-conf.el")
-(config/load-config-file "systemtap-conf.el")
-(config/load-config-file "tuareg-conf.el")
