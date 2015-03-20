@@ -28,6 +28,8 @@
 ;; Truncate long lines by default
 (set-default 'truncate-lines t)
 
+(setq abbrev-file-name (concat config/etc-dir "abbrev_defs"))
+
 (config/load-config-file "use-package-conf.el")
 (config/load-config-file "alert-conf.el")
 (config/load-config-file "bbdb-conf.el")

@@ -1,8 +1,8 @@
 (use-package gnus-desktop-notify
-	     :ensure t
-	     :defer t
-	     :config
-	     (gnus-desktop-notify-mode))
+  :ensure t
+  :defer t
+  :config
+  (gnus-desktop-notify-mode))
 
 ;; (setq gnus-select-method
 ;;       '(nnimap "gmail"
