@@ -36,14 +36,15 @@
 	(progn
 	  (benchmark-init/activate)))
 
+    ;; Configure automatic custom configurations
+    (setq custom-file (concat config/etc-dir "custom-configuration.el"))
+    (when (file-exists-p custom-file)
+      (load custom-file))
+
     ;; Load packs
     (mapcar (lambda (pack-dir)
 	      (config/load-pack (file-name-as-directory pack-dir)))
 	    config/packs)
 
-    ;; Configure automatic custom configurations
-    (setq custom-file (concat config/etc-dir "custom-configuration.el"))
-    (when (file-exists-p custom-file)
-      (load custom-file))
     (if profile-init
 	(benchmark-init/deactivate))))

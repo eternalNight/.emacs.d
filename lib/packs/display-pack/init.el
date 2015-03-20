@@ -8,16 +8,16 @@
   :config
   (custom-set-variables '(frame-background-mode 'dark)))
 
-(use-package solarized-theme
-  :pin marmalade
+(use-package color-theme-sanityinc-solarized
   :ensure t
   :config
-  (add-hook 'after-make-frame-functions
-	    (lambda (frame)
-	      (set-frame-parameter frame
-				   'background-mode
-				   (if (display-graphic-p frame) 'light 'dark))
-	      (enable-theme 'solarized))))
+  (if (display-graphic-p)
+      (progn
+	(custom-set-variables '(frame-background-mode 'light))
+	(color-theme-sanityinc-solarized-light))
+    (progn
+      (custom-set-variables '(frame-background-mode 'dark))
+      (color-theme-sanityinc-solarized-dark))))
 
 (config/add-pack-lib "live-fontify-hex")
 (use-package live-fontify-hex
