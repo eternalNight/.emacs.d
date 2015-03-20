@@ -1,3 +1,5 @@
+(config/load-config-file "use-package-conf.el")
+
 (custom-set-variables
  '(inhibit-startup-screen t)                             ;; Disable startup screen
  '(backup-directory-alist `(("." . ,config/backups-dir))) ;; Save all backup files at config/backups-dir
@@ -30,6 +32,15 @@
 
 (setq abbrev-file-name (concat config/etc-dir "abbrev_defs"))
 
-(config/load-config-file "use-package-conf.el")
-(config/load-config-file "alert-conf.el")
-(config/load-config-file "bbdb-conf.el")
+(use-package alert
+  :defer t
+  :config
+  (when (eq system-type 'windows-nt)
+    (setq alert-default-style 'notifu)))
+
+(use-package bbdb
+	     :ensure t
+	     :config
+	     (bbdb-initialize 'gnus)
+	     (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
+	     (setq bbdb-file (concat config/tmp-dir "bbdb")))

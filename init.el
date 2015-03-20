@@ -9,13 +9,6 @@
  config/autosaves-dir(file-name-as-directory (concat config/tmp-dir  "autosaves"))
  config/packs-dir    (file-name-as-directory (concat config/lib-dir  "packs")))
 
-;; Initialize package archives
-(require 'package)
-(push '("marmalade" . "http://marmalade-repo.org/packages/") package-archives)
-(push '("melpa" . "http://melpa.milkbox.net/packages/") package-archives)
-
-(package-initialize)
-
 ;; Load lib
 (load-file (concat config/lib-dir "core.el"))
 
@@ -31,12 +24,26 @@
 		    "data-pack")))
   (setq config/packs (mapcar (lambda (p) (concat config/packs-dir p)) pack-names)))
 
-;; Load packs
-(mapcar (lambda (pack-dir)
-          (config/load-pack (file-name-as-directory pack-dir)))
-        config/packs)
+;; Initialize package archives
+(require 'package)
+(push '("marmalade" . "http://marmalade-repo.org/packages/") package-archives)
+(push '("melpa" . "http://melpa.milkbox.net/packages/") package-archives)
 
-;; Configure automatic custom configurations
-(setq custom-file (concat config/etc-dir "custom-configuration.el"))
-(when (file-exists-p custom-file)
-  (load custom-file))
+(add-hook 'after-init-hook 'my-after-init-hook)
+(defun my-after-init-hook ()
+  (let ((profile-init (package-installed-p 'benchmark-init)))
+    (if profile-init
+	(progn
+	  (benchmark-init/activate)))
+
+    ;; Load packs
+    (mapcar (lambda (pack-dir)
+	      (config/load-pack (file-name-as-directory pack-dir)))
+	    config/packs)
+
+    ;; Configure automatic custom configurations
+    (setq custom-file (concat config/etc-dir "custom-configuration.el"))
+    (when (file-exists-p custom-file)
+      (load custom-file))
+    (if profile-init
+	(benchmark-init/deactivate))))

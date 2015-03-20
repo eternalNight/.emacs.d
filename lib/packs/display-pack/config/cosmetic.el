@@ -23,3 +23,5 @@
       (set-fontset-font (frame-parameter nil 'font)
 			charset
 			(font-spec :family "WenQuanYi Zen Hei Mono" :size 22))))
+
+(global-hl-line-mode 1)
