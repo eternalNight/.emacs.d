@@ -1,3 +1,6 @@
+(config/load-config-file "c-mode-conf.el")
+(config/load-config-file "xcscope-conf.el")
+
 (use-package alloy-mode
   :mode "\\.als$")
 
@@ -48,8 +51,3 @@
   :mode "\\.stp$"
   :config
   (setq c-basic-offset 8))
-
-(add-hook 'asm-mode-hook (function cscope:hook))
-(add-hook 'python-mode-hook (function cscope:hook))
-
-(config/load-config-file "c-mode-conf.el")

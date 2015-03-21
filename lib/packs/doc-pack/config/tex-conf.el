@@ -9,7 +9,8 @@
   (add-hook 'LaTeX-mode-hook
 	    (lambda ()
 	      (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
-	      (setq TeX-command-default "XeLaTeX"))))
+	      (setq TeX-command-default "XeLaTeX")
+	      (eproject-maybe-turn-on))))
 
 (use-package auto-complete-auctex
   :ensure t)
