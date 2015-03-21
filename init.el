@@ -45,7 +45,7 @@
     ;; Configure automatic custom configurations
     (setq custom-file (concat config/etc-dir "custom-configuration.el"))
     (when (file-exists-p custom-file)
-      (config/load-file-compile custom-file))
+      (config/compile-and-load-file custom-file))
 
     ;; Load packs
     (mapcar (lambda (pack-dir)
