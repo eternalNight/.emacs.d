@@ -2,6 +2,9 @@
 (config/load-config-file "ibuffer-conf.el")
 (config/load-config-file "image-conf.el")
 
+(eval-when-compile
+  (require 'use-package))
+
 (use-package gnus
   :defer t
   :config

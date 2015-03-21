@@ -1,5 +1,3 @@
-(config/load-config-file "use-package-conf.el")
-
 (custom-set-variables
  '(inhibit-startup-screen t)                             ;; Disable startup screen
  '(backup-directory-alist `(("." . ,config/backups-dir))) ;; Save all backup files at config/backups-dir
@@ -31,6 +29,9 @@
 (set-default 'truncate-lines t)
 
 (setq abbrev-file-name (concat config/etc-dir "abbrev_defs"))
+
+(eval-when-compile
+  (require 'use-package))
 
 (use-package alert
   :defer t

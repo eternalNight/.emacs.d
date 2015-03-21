@@ -1,6 +1,9 @@
 (config/load-config-file "eshell-conf.el")    ; Must invoked before eproject-conf
 (config/load-config-file "etags-conf.el")
 
+(eval-when-compile
+  (require 'use-package))
+
 (use-package auto-complete
   :ensure t
   :config

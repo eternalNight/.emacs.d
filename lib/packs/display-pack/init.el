@@ -2,6 +2,9 @@
 (config/load-config-file "calendar-conf.el")
 (config/load-config-file "time-conf.el")
 
+(eval-when-compile
+  (require 'use-package))
+
 (use-package cyberpunk-theme
   :disabled t
   :ensure t

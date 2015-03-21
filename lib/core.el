@@ -7,7 +7,13 @@
   (file-name-as-directory (concat current-pack-dir "lib")))
 
 (defun config/load-file-compile (f-name)
-  (load-file f-name))
+  "Compile and load the file"
+  (let ((compiled (concat f-name "c")))
+    (if (file-newer-than-file-p f-name compiled)
+	(byte-compile-file f-name))
+    (if (file-exists-p compiled)
+	(load-file compiled)
+      (load-file f-name))))
 
 (defun config/load-config-file (f-name)
   "Load the config file with name f-name in the current pack"

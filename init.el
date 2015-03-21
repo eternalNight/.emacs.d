@@ -9,9 +9,6 @@
  config/autosaves-dir(file-name-as-directory (concat config/tmp-dir  "autosaves"))
  config/packs-dir    (file-name-as-directory (concat config/lib-dir  "packs")))
 
-;; Load lib
-(load-file (concat config/lib-dir "core.el"))
-
 ;; Default packs
 (let ((pack-names '("system-pack"
 		    "display-pack"
@@ -31,23 +28,33 @@
 
 (add-hook 'after-init-hook 'my-after-init-hook)
 (defun my-after-init-hook ()
+  ;; Load core helpers
+  (let ((core-el  (concat config/lib-dir "core.el"))
+	(core-elc (concat config/lib-dir "core.elc")))
+    (if (file-newer-than-file-p core-el core-elc)
+	(byte-compile-file core-el))
+    (load-file (concat config/lib-dir "core.elc")))
+
+  ;; Make sure use-package is available
+  (if (not (package-installed-p 'use-package))
+      (package-install 'use-package))
+
   (let ((profile-init (package-installed-p 'benchmark-init)))
-    (if profile-init
-	(progn
-	  (benchmark-init/activate)))
+    (if profile-init (benchmark-init/activate))
 
     ;; Configure automatic custom configurations
     (setq custom-file (concat config/etc-dir "custom-configuration.el"))
     (when (file-exists-p custom-file)
-      (load custom-file))
+      (config/load-file-compile custom-file))
 
     ;; Load packs
     (mapcar (lambda (pack-dir)
 	      (config/load-pack (file-name-as-directory pack-dir)))
 	    config/packs)
 
-    (if profile-init
-	(benchmark-init/deactivate))
+    ;; stop profiling
+    (if profile-init (benchmark-init/deactivate))
 
-    ;; Toggle full screen after loading all init scripts
+    ;; Toggle full screen after loading all init scripts to avoid the toggle
+    ;; from being overridden
     (toggle-frame-fullscreen)))
