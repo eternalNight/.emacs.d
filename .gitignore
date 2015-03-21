@@ -1,7 +1,10 @@
-/etc
-/tmp
 /elpa
+/etc
+/server
+/tmp
+
 .*
 !.gitignore
+
 *~
 *.elc
