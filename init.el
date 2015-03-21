@@ -47,4 +47,7 @@
 	    config/packs)
 
     (if profile-init
-	(benchmark-init/deactivate))))
+	(benchmark-init/deactivate))
+
+    ;; Toggle full screen after loading all init scripts
+    (toggle-frame-fullscreen)))
