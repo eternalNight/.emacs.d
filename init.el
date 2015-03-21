@@ -57,4 +57,6 @@
 
     ;; Toggle full screen after loading all init scripts to avoid the toggle
     ;; from being overridden
-    (toggle-frame-fullscreen)))
+    ;; This function is only available in 24.4+
+    (if (fboundp 'toggle-frame-fullscreen)
+	(toggle-frame-fullscreen))))
