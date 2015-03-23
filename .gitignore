@@ -2,6 +2,7 @@
 /etc
 /server
 /tmp
+/projectile*
 
 .*
 !.gitignore
