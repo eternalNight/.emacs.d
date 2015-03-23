@@ -1,5 +1,5 @@
 (config/load-config-file "dired-conf.el")
-(config/load-config-file "ibuffer-conf.el")
+;; (config/load-config-file "ibuffer-conf.el")
 (config/load-config-file "image-conf.el")
 
 (eval-when-compile
@@ -19,7 +19,8 @@
   :ensure t
   :bind (("M-x" . helm-M-x)
 	 ("C-x C-f" . helm-find-files)
-	 ("C-x b" . helm-buffers-list))
+	 ("C-x b" . helm-buffers-list)
+	 ("C-x C-b" . helm-buffers-list))
   :config
   (require 'helm-config))
 
