@@ -1,5 +1,6 @@
 (config/load-config-file "eshell-conf.el")    ; Must invoked before eproject-conf
 ;; (config/load-config-file "etags-conf.el")
+(config/load-config-file "xcscope-conf.el")
 
 (eval-when-compile
   (require 'use-package))

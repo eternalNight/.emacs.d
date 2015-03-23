@@ -1,5 +1,4 @@
 (config/load-config-file "c-mode-conf.el")
-(config/load-config-file "xcscope-conf.el")
 
 (eval-when-compile
   (require 'use-package))
