@@ -1,6 +1,6 @@
-(config/load-config-file "eshell-conf.el")    ; Must invoked before eproject-conf
+(config/load-config-file "cscope-conf.el")
+(config/load-config-file "eshell-conf.el")
 ;; (config/load-config-file "etags-conf.el")
-(config/load-config-file "xcscope-conf.el")
 
 (eval-when-compile
   (require 'use-package))
@@ -63,12 +63,22 @@
   (dolist (x '(emacs-lisp lisp))
     (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'rainbow-delimiters-mode)))
 
-(use-package xcscope
+(use-package helm-cscope
   :ensure t
   :defer t
   :config
   (custom-set-variables
-   '(cscope-do-not-update-database t)))
+   '(cscope-do-not-update-database t))
+  (add-hook 'helm-cscope-mode-hook
+	    (lambda ()
+	      (local-set-key (kbd "C-c s d") 'helm-cscope-find-global-definition)
+	      (local-set-key (kbd "C-c s f") 'helm-cscope-find-this-file)
+	      (local-set-key (kbd "C-c s s") 'helm-cscope-find-this-symbol)
+	      (local-set-key (kbd "C-c s u") 'helm-cscope-pop-mark))))
+
+(use-package helm-cscope
+  :ensure t
+  :defer t)
 
 (use-package yasnippet
   :ensure t
