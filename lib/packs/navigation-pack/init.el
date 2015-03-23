@@ -4,6 +4,24 @@
 
 (eval-when-compile
   (require 'use-package))
+(require 'bind-key)
+
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-." . ace-jump-mode))
+
+(use-package ace-window
+  :ensure t
+  :disabled t
+  :bind ("C-x o" . ace-window))
+
+(use-package helm
+  :ensure t
+  :bind (("M-x" . helm-M-x)
+	 ("C-x C-f" . helm-find-files)
+	 ("C-x b" . helm-buffers-list))
+  :config
+  (require 'helm-config))
 
 (use-package gnus
   :defer t
@@ -42,6 +60,7 @@
 
 (use-package idomenu
   :ensure t
+  :disabled t
   :config
   (custom-set-variables
    '(ido-enable-prefix nil)
