@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ilist
+# key: ilist
+# --
+${1:-} ${2:Case} "${3:l} = nil".
+$0
+$1 $2 "$3 = ${4:x} :: ${5:l'}".

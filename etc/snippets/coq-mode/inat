@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: inat
+# key: inat
+# --
+${1:-} ${2:Case} "${3:n} = 0".
+$0
+$1 $2 "$3 = S ${4:n'}".

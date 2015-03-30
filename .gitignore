@@ -1,5 +1,4 @@
 /elpa
-/etc
 /server
 /tmp
 /projectile*
@@ -9,3 +8,7 @@
 
 *~
 *.elc
+
+/etc/bbdb
+/etc/abbrev_defs
+/etc/custom-configuration.el

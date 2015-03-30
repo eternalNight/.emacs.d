@@ -83,4 +83,5 @@
 (use-package yasnippet
   :ensure t
   :config
+  (setq yas-snippet-dirs (list (concat config/etc-dir "snippets") 'yas-installed-snippets-dir))
   (yas-global-mode 1))
