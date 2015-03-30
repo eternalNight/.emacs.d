@@ -9,8 +9,9 @@
   :commands (flyspell-mode)
   :defer t)
 
-(use-package tex-site
+(use-package LaTeX-mode
   :ensure auctex
+  :mode "\\.tex$"
   :config
   (add-hook 'LaTeX-mode-hook
 	    (lambda ()
