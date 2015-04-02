@@ -18,6 +18,9 @@
 ;; Remove trailing whitespaces on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Use a vertical bar instead of a box
+(setq-default cursor-type 'bar)
+
 ;; Move the mouse when the cursor gets close to it
 (mouse-avoidance-mode 'banish)
 
