@@ -15,6 +15,10 @@
   :disabled t
   :bind ("C-x o" . ace-window))
 
+(use-package ztree
+  :ensure t
+  :defer t)
+
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
