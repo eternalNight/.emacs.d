@@ -63,12 +63,17 @@
   (dolist (x '(emacs-lisp lisp))
     (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'rainbow-delimiters-mode)))
 
-(use-package helm-cscope
+(use-package xcscope
   :ensure t
   :defer t
   :config
   (custom-set-variables
-   '(cscope-do-not-update-database t))
+   '(cscope-do-not-update-database t)))
+
+(use-package helm-cscope
+  :ensure t
+  :defer t
+  :config
   (add-hook 'helm-cscope-mode-hook
 	    (lambda ()
 	      (local-set-key (kbd "C-c s d") 'helm-cscope-find-global-definition)
