@@ -40,6 +40,10 @@
   :ensure t
   :mode "\\.md$")
 
+(use-package pkgbuild-mode
+  :ensure t
+  :mode "PKGBUILD$")
+
 (use-package rust-mode
   :ensure t
   :mode "\\.rs$")
