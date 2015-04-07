@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
-# name: ilist
-# key: ilist
+# name: ilst
+# key: ilst
 # --
-${1:-} ${2:Case} "${3:l} = nil".
+induction ${1:l} as [|${2:x} ${3:l'}].
+${4:-} ${5:}Case "$1 = nil".
 $0
-$1 $2 "$3 = ${4:x} :: ${5:l'}".
+$4 $5Case "$1 = $2 :: $3".
