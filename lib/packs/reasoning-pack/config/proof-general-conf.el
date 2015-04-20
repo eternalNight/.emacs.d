@@ -4,3 +4,4 @@
 (add-to-list 'proof-universal-keys '([(control j)] . proof-assert-next-command-interactive))
 
 (setq proof-splash-enable nil)
+(setq proof-script-fly-past-comments t)
