@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: ibol
+# key: ibol
+# --
+destruct ${1:b}.
+${2:-} (** $1 = true **)
+$0
+$2 (** $1 = false **)

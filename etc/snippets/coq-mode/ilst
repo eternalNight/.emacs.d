@@ -2,7 +2,7 @@
 # name: ilst
 # key: ilst
 # --
-induction ${1:l} as [|${2:x} ${3:l'}].
-${4:-} ${5:}Case "$1 = nil".
+${1:induction} ${2:l} as [|${3:x} ${4:l'} IHl'].
+${5:-} (** $2 = nil **)
 $0
-$4 $5Case "$1 = $2 :: $3".
+$5 (** $2 = $3 :: $4 **)
