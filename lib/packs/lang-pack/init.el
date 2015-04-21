@@ -13,10 +13,12 @@
   (add-hook 'clojure-mode-hook
 	    '(lambda ()
 	       (define-key clojure-mode-map
-		 (kbd "C-j") 'nrepl-eval-last-expression)))
+		 (kbd "C-j") 'cider-eval-last-expression)))
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
-(config/add-pack-lib "nrepl")
-(autoload 'nrepl-jack-in "nrepl" "Start a nREPL server" t)
+
+(use-package cider
+  :ensure t
+  :defer t)
 
 (use-package cocci-mode
   :mode "\\.cocci$")
