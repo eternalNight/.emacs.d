@@ -13,7 +13,7 @@
 
 ;; Set personal information
 (setq user-full-name "Junjie Mao")
-(setq user-mail-address "junjie.mao@hotmail.com")
+(setq user-mail-address "junjie.mao@enight.me")
 
 ;; Remove trailing whitespaces on saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

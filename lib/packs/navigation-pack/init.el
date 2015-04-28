@@ -1,6 +1,9 @@
+(custom-set-variables
+ '(tls-program '("D:/msys64/usr/bin/openssl.exe s_client -connect %h:%p")))
+
 (config/load-config-file "dired-conf.el")
-;; (config/load-config-file "ibuffer-conf.el")
 (config/load-config-file "image-conf.el")
+(config/load-config-file "sieve-conf.el")
 
 (eval-when-compile
   (require 'use-package))
@@ -32,19 +35,19 @@
   :defer t
   :config
   (setq gnus-select-method
-	'(nnimap "outlook"
-		 (nnimap-address "imap-mail.outlook.com")
+	'(nnimap "mail.enight.me"
+		 (nnimap-address "mail.enight.me")
 		 (nnimap-server-port 993)
 		 (nnimap-stream ssl)
 		 (nnimap-fetch-partial-articles "text/")))
-  (add-to-list 'gnus-secondary-select-methods '(nntp "news.gmane.org"))
   (setq message-send-mail-function 'smtpmail-send-it
-	smtpmail-starttls-credentials '(("smtp-mail.outlook.com" 587 nil nil))
-	smtpmail-auth-credentials '(("smtp-mail.outlook.com" 587
-				     "junjie.mao@hotmail.com" nil))
-	smtpmail-default-smtp-server "smtp-mail.outlook.com"
-	smtpmail-smtp-server "smtp-mail.outlook.com"
-	smtpmail-smtp-service 587
+	smtpmail-starttls-credentials '(("mail.enight.me" 465 nil nil))
+	smtpmail-auth-credentials '(("mail.enight.me" 465
+				     "junjie.mao@enight.me" nil))
+	smtpmail-default-smtp-server "mail.enight.me"
+	smtpmail-smtp-server "mail.enight.me"
+	smtpmail-stream-type 'ssl
+	smtpmail-smtp-service 465
 	gnus-cache-directory (concat config/tmp-dir "Gnus/Mails/cache")
 	mm-default-directory (concat config/tmp-dir "Gnus/MIME")
 	gnus-read-active-file 'some
