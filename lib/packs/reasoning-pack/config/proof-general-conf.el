@@ -5,3 +5,4 @@
 
 (setq proof-splash-enable nil)
 (setq proof-script-fly-past-comments t)
+(setq proof-three-window-mode-policy 'hybrid)

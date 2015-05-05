@@ -13,7 +13,7 @@
   (add-hook 'clojure-mode-hook
 	    '(lambda ()
 	       (define-key clojure-mode-map
-		 (kbd "C-j") 'cider-eval-last-expression)))
+		 (kbd "C-j") 'cider-eval-last-sexp)))
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
 
 (use-package cider
@@ -26,6 +26,13 @@
 (use-package gnuplot-mode
   :ensure t
   :mode "\\.gp$")
+
+(use-package lilypond-mode
+  :mode ("\\.i?ly$" . LilyPond-mode)
+  :config
+  (add-hook 'LilyPond-mode-hook
+	    (lambda ()
+	      (turn-on-font-lock))))
 
 (use-package llvm-mode
   :ensure t
