@@ -9,6 +9,8 @@
  config/autosaves-dir(file-name-as-directory (concat config/tmp-dir  "autosaves"))
  config/packs-dir    (file-name-as-directory (concat config/lib-dir  "packs")))
 
+(setq stack-trace-on-error t)
+
 ;; Default packs
 (let ((pack-names '("system-pack"
 		    "display-pack"

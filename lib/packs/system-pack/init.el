@@ -29,7 +29,7 @@
 (put 'scroll-right 'disabled nil)
 
 ;; Truncate long lines by default
-(set-default 'truncate-lines t)
+;; (set-default 'truncate-lines t)
 
 (setq abbrev-file-name (concat config/etc-dir "abbrev_defs"))
 

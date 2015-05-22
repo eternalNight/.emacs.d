@@ -38,8 +38,8 @@
 	'(nnimap "mail.enight.me"
 		 (nnimap-address "mail.enight.me")
 		 (nnimap-server-port 993)
-		 (nnimap-stream ssl)
-		 (nnimap-fetch-partial-articles "text/")))
+		 ;; (nnimap-fetch-partial-articles "text/")
+		 (nnimap-stream ssl)))
   (setq message-send-mail-function 'smtpmail-send-it
 	smtpmail-starttls-credentials '(("mail.enight.me" 465 nil nil))
 	smtpmail-auth-credentials '(("mail.enight.me" 465
