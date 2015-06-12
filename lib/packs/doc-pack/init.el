@@ -12,12 +12,12 @@
 (use-package LaTeX-mode
   :ensure auctex
   :mode "\\.tex$"
-  :config
-  (add-hook 'LaTeX-mode-hook
-	    (lambda ()
-	      (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
-	      (setq TeX-command-default "XeLaTeX")
-	      (flyspell-mode))))
+  :init
+  (defun my-latex-mode-hook ()
+    (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+    (setq TeX-command-default "XeLaTeX")
+    (flyspell-mode))
+  (add-hook 'LaTeX-mode-hook 'my-latex-mode-hook))
 
 (use-package auto-complete-auctex
   :ensure t)
