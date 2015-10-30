@@ -6,6 +6,10 @@
 (use-package alloy-mode
   :mode "\\.als$")
 
+(use-package bison-mode
+  :ensure t
+  :mode "\\.y$")
+
 (use-package clojure-mode
   :ensure t
   :mode "\\.cljs?$"
@@ -22,6 +26,13 @@
 
 (use-package cocci-mode
   :mode "\\.cocci$")
+
+(use-package coffee-mode
+  :ensure t
+  :mode "\\.coffee$")
+
+(use-package flex-mode
+  :mode "\\.l$")
 
 (use-package gnuplot-mode
   :ensure t
@@ -48,6 +59,10 @@
 (use-package markdown-mode
   :ensure t
   :mode "\\.md$")
+
+(use-package php-mode
+  :ensure t
+  :mode "\\.php$")
 
 (use-package pkgbuild-mode
   :ensure t
