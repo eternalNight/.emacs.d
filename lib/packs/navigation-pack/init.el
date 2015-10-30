@@ -56,7 +56,9 @@
 	gnus-novice-user nil
 	gnus-expert-user t
 	nnmail-expiry-wait 7
-	gnus-fetch-old-headers 'passive)
+	gnus-fetch-old-headers 'passive
+	gnus-posting-styles '((".*" (signature-file (concat config/etc-dir "/signature"))))
+	)
   (gnus-agentize)
   (gnus-demon-add-handler 'gnus-demon-scan-news 5 t))
 
