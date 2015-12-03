@@ -31,6 +31,10 @@
   :config
   (require 'helm-config))
 
+(use-package helm-swoop
+  :ensure t
+  :bind (("C-s" . helm-swoop)))
+
 (use-package gnus
   :defer t
   :config
@@ -58,6 +62,8 @@
 	nnmail-expiry-wait 7
 	gnus-fetch-old-headers 'passive
 	gnus-posting-styles '((".*" (signature-file (concat config/etc-dir "/signature"))))
+	gnus-message-archive-group nil
+	gnus-parameters '((".*" (gcc-self . t)))
 	)
   (gnus-agentize)
   (gnus-demon-add-handler 'gnus-demon-scan-news 5 t))

@@ -45,6 +45,10 @@
 	    (lambda ()
 	      (turn-on-font-lock))))
 
+(use-package go-mode
+  :ensure t
+  :mode "\\.go$")
+
 (use-package llvm-mode
   :ensure t
   :mode "\\.ll$")

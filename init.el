@@ -62,3 +62,4 @@
     ;; This function is only available in 24.4+
     (if (fboundp 'toggle-frame-fullscreen)
 	(toggle-frame-fullscreen))))
+(put 'downcase-region 'disabled nil)
