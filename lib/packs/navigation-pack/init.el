@@ -31,6 +31,11 @@
   :config
   (require 'helm-config))
 
+(use-package helm-ag
+  :ensure t
+  :bind (("C-c a s" . helm-do-ag-project-root)
+	 ("C-c a u" . helm-ag-pop-stack)))
+
 (use-package helm-swoop
   :ensure t
   :bind (("C-s" . helm-swoop)))
