@@ -9,6 +9,10 @@
   :commands (flyspell-mode)
   :defer t)
 
+(use-package ebib
+  :ensure t
+  :bind ("C-c b" . ebib))
+
 (use-package LaTeX-mode
   :ensure auctex
   :mode "\\.tex$"
