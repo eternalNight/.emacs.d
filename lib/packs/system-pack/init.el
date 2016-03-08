@@ -48,3 +48,6 @@
 	     (bbdb-initialize 'gnus)
 	     (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
 	     (setq bbdb-file (concat config/etc-dir "bbdb")))
+
+(use-package restart-emacs
+  :ensure t)
