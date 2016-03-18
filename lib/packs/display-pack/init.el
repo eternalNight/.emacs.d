@@ -6,13 +6,14 @@
   (require 'use-package))
 
 (use-package cyberpunk-theme
-  :disabled t
   :ensure t
   :config
-  (custom-set-variables '(frame-background-mode 'dark)))
+  (custom-set-variables '(frame-background-mode 'dark))
+  (load-theme 'cyberpunk t))
 
 (use-package color-theme-sanityinc-solarized
   :ensure t
+  :disabled t
   :config
   (if (display-graphic-p)
       (progn
