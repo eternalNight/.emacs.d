@@ -68,7 +68,7 @@
   :defer t
   :config
   (custom-set-variables
-   '(cscope-do-not-update-database t)))
+   '(cscope-option-do-not-update-database t)))
 
 (use-package helm-cscope
   :ensure t
