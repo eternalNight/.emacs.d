@@ -72,6 +72,11 @@
   :ensure t
   :mode "PKGBUILD$")
 
+(use-package ess
+  :ensure t
+  :config
+  (require 'ess-site))
+
 (use-package rust-mode
   :ensure t
   :mode "\\.rs$")
