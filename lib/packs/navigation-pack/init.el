@@ -34,7 +34,9 @@
 (use-package helm-ag
   :ensure t
   :bind (("C-c a s" . helm-do-ag-project-root)
-	 ("C-c a u" . helm-ag-pop-stack)))
+	 ("C-c a u" . helm-ag-pop-stack))
+  :config
+  (setq helm-ag-insert-at-point 'symbol))
 
 (use-package helm-swoop
   :ensure t
