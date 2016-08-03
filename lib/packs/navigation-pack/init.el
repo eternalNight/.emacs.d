@@ -1,5 +1,5 @@
 (custom-set-variables
- '(tls-program '("D:/msys64/usr/bin/openssl.exe s_client -connect %h:%p")))
+ '(tls-program '("C:/msys64/usr/bin/openssl.exe s_client -connect %h:%p")))
 
 (config/load-config-file "dired-conf.el")
 (config/load-config-file "image-conf.el")
@@ -49,7 +49,7 @@
 	'(nnimap "mail.enight.me"
 		 (nnimap-address "mail.enight.me")
 		 (nnimap-server-port 993)
-		 ;; (nnimap-fetch-partial-articles "text/")
+		 (nnimap-fetch-partial-articles "text/")
 		 (nnimap-stream ssl)))
   (setq message-send-mail-function 'smtpmail-send-it
 	smtpmail-starttls-credentials '(("mail.enight.me" 465 nil nil))
@@ -69,8 +69,6 @@
 	nnmail-expiry-wait 7
 	gnus-fetch-old-headers 'passive
 	gnus-posting-styles '((".*" (signature-file (concat config/etc-dir "/signature"))))
-	gnus-message-archive-group nil
-	gnus-parameters '((".*" (gcc-self . t)))
 	)
   (gnus-agentize)
   (gnus-demon-add-handler 'gnus-demon-scan-news 5 t))
