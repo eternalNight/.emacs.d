@@ -49,6 +49,9 @@
   :ensure t
   :mode "\\.go$")
 
+(use-package k-mode
+  :mode "\\.k$")
+
 (use-package llvm-mode
   :ensure t
   :mode "\\.ll$")
