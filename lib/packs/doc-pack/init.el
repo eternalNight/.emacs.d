@@ -18,7 +18,7 @@
   :mode "\\.tex$"
   :init
   (defun my-latex-mode-hook ()
-    (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+    (add-to-list 'TeX-command-list '("XeLaTeX" "xelatex %(mode) -shell-escape %t" TeX-run-TeX nil t))
     (setq TeX-command-default "XeLaTeX")
     (flyspell-mode))
   (add-hook 'LaTeX-mode-hook 'my-latex-mode-hook))
