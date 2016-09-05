@@ -1,6 +1,7 @@
 (config/load-config-file "cscope-conf.el")
 (config/load-config-file "eshell-conf.el")
 ;; (config/load-config-file "etags-conf.el")
+(config/load-config-file "magit-extensions.el")
 
 (eval-when-compile
   (require 'use-package))
